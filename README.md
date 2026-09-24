@@ -15,3 +15,25 @@ Edit .env for local paths or RPC overrides. It is ignored by Git. Keep credentia
 The collector uses free public Solana RPC endpoints by default and limits itself to four requests per second. Global discovery is focused on Pump.fun launches. PumpSwap and Raydium activity is followed only for discovered tokens and their associated addresses. Capacity limits refuse excess notices visibly and record coverage metrics; collection is not comprehensive. The current liquidity analyzer supports PumpSwap constant-product pools and Raydium AMM v4, with unknown results where ownership, reserves, pricing, or custody cannot be proven.
 
 See scope, collector design, token security, liquidity analysis, holder distribution, and developer intelligence for the exact boundaries and evidence rules.
+
+
+Solana RPC
+    ↓
+Token Discovery
+    ↓
+On-chain Collectors
+    ↓
+┌───────────────────────────┐
+│ Security Analysis         │
+│ Liquidity Analysis        │
+│ Holder Analysis           │
+│ Developer Intelligence    │
+│ Early Transaction Analysis│
+│ Bundle Detection          │
+└───────────────────────────┘
+    ↓
+Signal / Risk Engine
+    ↓
+SQLite
+    ↓
+Telegram Alerts
